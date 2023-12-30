@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Temperature Converter</title>
+    <style>
+      
+      h1{
+        text-align: center;
+      }
+      #containor{
+        text-align: center;
+        background-color: aqua;
+        padding:50px;
+      }
+      .input-div{
+        display:inline-block;
+      }
+      .inp{
+        padding: 5px 10px;
+        margin: 10px;
+        font-size:30px;
+        font-weight:bold;
+        width:250px;
+        text-align: center;
+      }
+      label{
+        font-size: 20px;
+        font-family:fantasy
+      }
+    </style>
+   </head>
+<body>
+  <h1>Temperature Converter</h1>
+  <div id="containor">
+    <div class="input-div">
+      <label>Calcius</label>
+      <input type="number" value="0" id="cel" class="inp">
+    </div>
+    <div class="input-div">
+      <label>Ferenhite</label>
+      <input type="number" value="32" id="fah" class="inp">
+    </div>
+  </div>
+    <script>
+      var cal=document.querySelector('#cel');
+      var feh=document.querySelector('#fah');
+
+      cel.addEventListener('input',function(){
+        let c=this.value;
+        let f=(c * 9/5)+ 32;
+        if(!Number.isInteger(f)){
+          f=f.toFixed(4);
+        }
+        feh.value=f;
+
+      });
+      fah.addEventListener('input',function(){
+        let f=this.value;
+        let c=(f - 32) / 1.8;
+        if(!Number.isInteger(c)){
+         c=c.toFixed(4);
+        }
+       cal.value=c;
+      });
+    </script>
+</body>
+</html>
